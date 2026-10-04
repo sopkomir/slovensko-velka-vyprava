@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Slovensko – veľká výprava</title>
+<meta name="description" content="Interaktívny kurz geografie Slovenska pre všetky vekové kategórie – mapy, učebné texty, aktivity, pracovné listy a kvízy.">
+<meta name="theme-color" content="#1B2A41">
+<meta property="og:title" content="Slovensko – veľká výprava">
+<meta property="og:description" content="Interaktívny kurz geografie Slovenska od škôlky po maturitu – mapy, príbehy, pokusy v teréne, pracovné listy a kvízy.">
+<meta property="og:image" content="og.png">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Výprava">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1B2A41;--bg2:#22364F;--ink:#F2F5FA;--soft:#B8C6D9;--card:#FFFFFF;--cink:#1B2A41;--csoft:#55657B;--red:#D62828;--blue:#1D5FC4;--green:#2A9D4B;--yellow:#F2C200;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%}
+body{margin:0;min-height:100%;background:radial-gradient(120% 80% at 80% -10%,#2E4A6E 0,var(--bg) 55%) fixed,var(--bg);color:var(--ink);font-family:'Nunito','Segoe UI',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-tap-highlight-color:transparent}
+h1,h2,h3{font-family:'Bricolage Grotesque','Trebuchet MS',sans-serif;margin:0;line-height:1.08;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--yellow);outline-offset:3px;border-radius:12px}
+.wrap{max-width:1040px;margin:0 auto;padding:22px 16px 40px}
+header{display:flex;align-items:center;gap:14px;margin:6px 0 22px}
+header img{width:58px;height:58px;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+header h1{font-size:clamp(30px,6vw,52px);font-weight:800}
+header p{margin:2px 0 0;color:var(--soft)}
+.install{margin-left:auto;border:2px solid var(--soft);background:none;color:var(--ink);border-radius:12px;padding:8px 14px;font:inherit;font-weight:800;cursor:pointer;display:none;white-space:nowrap}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}@media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+.lvl{position:relative;display:flex;flex-direction:column;background:var(--card);color:var(--cink);border-radius:26px;padding:18px 18px 16px;text-decoration:none;min-height:300px;overflow:hidden;box-shadow:0 8px 0 rgba(0,0,0,.25);transition:transform .12s}
+a.lvl:active{transform:translateY(5px);box-shadow:0 3px 0 rgba(0,0,0,.25)}
+.lvl .art{height:120px;margin:-18px -18px 14px;display:flex;align-items:center;justify-content:center;gap:4px;font-size:62px;position:relative}
+.lvl .age{display:inline-block;align-self:flex-start;font-weight:800;font-size:13px;border-radius:999px;padding:3px 11px;background:#EEF2F7;margin-bottom:8px}
+.lvl h2{font-size:27px}
+.lvl p{margin:6px 0 12px;color:var(--csoft);font-size:15.5px;flex:1}
+.lvl .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800;font-size:14px}
+.bar{flex:1;height:10px;border-radius:99px;background:#E6EBF1;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:99px}
+.go{background:var(--cink);color:#fff;border-radius:12px;padding:8px 14px}
+.soon{opacity:.72}.soon .go{background:#8C98A8}
+.l1 .art{background:linear-gradient(160deg,#FFE8A8,#BFE3B4)}
+.l2 .art{background:linear-gradient(160deg,#DCE8F8,#CDE7B0)}
+.l3 .art{background:linear-gradient(160deg,#E4E0F5,#D6EAF2)}
+.l4 .art{background:linear-gradient(160deg,#F5E1D6,#E7E7E7)}
+.marker{display:inline-block;width:46px;height:46px;border:3px solid #1B2A41;border-radius:5px;background:linear-gradient(#fff 0 33%,var(--mc) 33% 67%,#fff 67%);margin:0 3px}
+.info{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.info section{background:var(--bg2);border-radius:20px;padding:16px 18px}
+.info h3{font-size:19px;margin-bottom:6px}.info p,.info li{color:var(--soft);font-size:15px}.info ul{padding-left:20px;margin:6px 0}
+footer{margin-top:26px;color:var(--soft);font-size:13px;text-align:center}
+.embed .install,.embed .info section:first-child{display:none!important}
+.openfull{display:none;margin-left:auto;border:2px solid var(--soft);color:var(--ink);border-radius:12px;padding:8px 14px;font-weight:800;text-decoration:none;white-space:nowrap}.embed .openfull{display:inline-block}
+@media (max-width:640px){header h1{font-size:30px}}
+.reset{background:none;border:0;color:var(--soft);text-decoration:underline;font:inherit;font-size:13px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header><img src="icons/icon-192.png" alt=""><div><h1>Slovensko – veľká výprava</h1><p>Geografia Slovenska pre všetky vekové kategórie</p></div><button class="install" id="install">⬇️ Inštalovať</button><a class="openfull" href="./" target="_blank" rel="noopener">↗ Celá obrazovka</a></header>
+
+ <main class="grid" id="levels"></main>
+
+ <div class="info">
+  <section><h3>📲 Ako appka</h3><p>Rozcestník si môžeš pridať na plochu tabletu či mobilu. Na <b>Androide</b> ťukni na „Inštalovať“ (alebo v menu prehliadača „Pridať na plochu“). Na <b>iPade a iPhone</b> otvor stránku v Safari, ťukni na <b>Zdieľať</b> a vyber <b>Pridať na plochu</b>. Po prvom otvorení funguje aj bez internetu.</p></section>
+  <section><h3>👩‍🏫 Pre učiteľov</h3><ul><li>Obsah vychádza zo ŠVP 2023 (Človek a spoločnosť).</li><li>Každá zastávka: text alebo príbeh, interaktívne mapy, aktivita bez obrazovky, pracovný list na tlač, kvíz a pečiatka.</li><li>V každom module je panel „Pre učiteľa“ s cieľmi a tipmi.</li></ul></section>
+  <section><h3>🔊 Čítanie nahlas</h3><p>Texty číta slovenský hlas zariadenia. Najlepšie znie vylepšený hlas: na iPade v Nastavenia → Prístupnosť → Predčítavaný obsah → Hlasy → Slovenčina; na Androide hlasové dáta Google pre slovenčinu.</p></section>
+ </div>
+ <footer><p>Pokrok a pečiatky sa ukladajú len v tomto zariadení. <button class="reset" id="reset">Vymazať všetok pokrok</button></p><p>Mapové podklady: Natural Earth (voľné dielo).</p></footer>
+</div>
+<script>
+const LEVELS=[
+ {id:'mo',file:'male-objavitelia.html',cls:'l1',name:'Malí objavitelia',age:'MŠ – 3. ročník · 5 – 9 rokov',art:'🦉',total:14,desc:'So sovou Buzolou od lavice až po glóbus: orientácia, mapa a krajina, Slovensko a svet. Funguje aj bez čítania.'},
+ {id:'cv',file:'cestovatelia.html',cls:'l2',name:'Cestovatelia',age:'4. – 5. ročník · 9 – 11 rokov',art:'<span class="marker" style="--mc:#D62828"></span><span class="marker" style="--mc:#1D5FC4"></span><span class="marker" style="--mc:#2A9D4B"></span>',total:16,desc:'Tri značené trasy: Slovensko na mape, cesty po Slovensku a ľudia a krajina. Vrstevnice, kraje, regióny, UNESCO.'},
+ {id:'bd',file:'badatelia.html',cls:'l3',name:'Bádatelia',age:'6. – 9. ročník · 11 – 15 rokov',art:'🔬🗺️',total:15,desc:'S Emou a Samom: príroda Slovenska, obyvateľstvo a sídla v dátach, hospodárstvo, regionálne rozdiely a terénny výskum.'},
+ {id:'ex',file:'experti.html',cls:'l4',name:'Experti',age:'Stredná škola · maturita',art:'🎓',total:10,desc:'Podľa cieľových požiadaviek na maturitu: analýza prameňov, argumentácia a úlohy podľa Bloomovej taxonómie. Fyzickogeografická a humánnogeografická sféra Slovenska a maturitný trenažér s analýzou prameňov a komplexnou charakteristikou regiónu.'}];
+function badges(p){try{return Object.keys(JSON.parse(localStorage.getItem(p+'_badges')||'{}')).length}catch(e){return 0}}
+document.getElementById('levels').innerHTML=LEVELS.map(l=>{const n=l.total?badges(l.id):0;const pct=l.total?Math.round(n/l.total*100):0;
+ return `<${l.soon?'div':'a href="'+l.file+'"'} class="lvl ${l.cls} ${l.soon?'soon':''}" ${l.soon?'aria-disabled="true"':''}>
+  <div class="art" aria-hidden="true">${l.art}</div><span class="age">${l.age}</span><h2>${l.name}</h2><p>${l.desc}</p>
+  <div class="meta">${l.soon?'<span>Pripravujeme</span><span class="go">Čoskoro</span>':`<div class="bar" title="${n} z ${l.total} pečiatok"><i style="width:${pct}%"></i></div><span>${n}/${l.total} 🎫</span><span class="go">Spustiť</span>`}</div></${l.soon?'div':'a'}>`}).join('');
+document.getElementById('reset').onclick=()=>{if(confirm('Naozaj vymazať pokrok vo všetkých úrovniach na tomto zariadení?')){try{Object.keys(localStorage).filter(k=>/^(mo|cv|bd|ex)_/.test(k)).forEach(k=>localStorage.removeItem(k))}catch(e){}location.reload()}};
+if(window.self!==window.top||/[?&]embed/.test(location.search))document.body.classList.add('embed');
+let deferred=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;document.getElementById('install').style.display='block'});
+document.getElementById('install').onclick=async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;document.getElementById('install').style.display='none'};
+if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
+window.addEventListener('pageshow',e=>{if(e.persisted)location.reload()});
+</script>
+</body>
+</html>
