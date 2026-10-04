@@ -177,6 +177,8 @@ dialog::backdrop{background:rgba(18,28,43,.55)}
 #print-area{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{@page{size:A4;margin:12mm}body{background:#fff}body>*:not(#print-area){display:none!important}#print-area{display:block}#print-area .sheet{border:0;padding:0}}
+@media (max-width:480px){.top-in{gap:5px!important;padding:8px 8px!important}.pass-btn{padding:5px 6px!important;font-size:14px}.lvl button{padding:6px 7px!important;font-size:12px!important}.hub-btn{flex-basis:34px!important;width:34px!important;height:36px!important;font-size:18px!important}.lvl .lv-age{display:none}}
+@media (max-width:370px){.lvl button{padding:5px 5px!important;font-size:11px!important}}
 </style>
 </head>
 <body>
@@ -1489,6 +1491,17 @@ for(const [k,g] of Object.entries(BGEN))if(M[k])M[k].gen=g;
 const pickQ=makePickQ(5,2);
 
 render();
+
+/* ---------- vypnutie zvuku ---------- */
+S.mute=store.get('mute',false);
+{const _tone=tone;tone=function(ok){if(!S.mute)_tone(ok)}}
+let __clickSay=0;document.addEventListener('click',e=>{if(e.target.closest('[data-say],#isay'))__clickSay=Date.now()},true);
+{const _say=say;say=function(t,m){if(S.mute&&Date.now()-__clickSay>600)return;return _say(t,m)}}
+(function(){const host=document.querySelector('.top-in');if(!host)return;const b=document.createElement('button');b.className='pass-btn';b.id='muteBtn';
+ const upd=()=>{b.textContent=S.mute?'🔇':'🔊';b.setAttribute('aria-pressed',S.mute);b.setAttribute('aria-label',S.mute?'Zvuk je vypnutý – zapnúť':'Vypnúť zvuk');b.title=S.mute?'Zvuk je vypnutý (texty si môžeš pustiť tlačidlom pri texte)':'Vypnúť zvuk'};
+ b.onclick=()=>{S.mute=!S.mute;store.set('mute',S.mute);if(S.mute){try{speechSynthesis.cancel()}catch(e){}}upd();toast(S.mute?'Zvuk je vypnutý.':'Zvuk je zapnutý.')};
+ upd();const pass=document.getElementById('passBtn');host.insertBefore(b,document.getElementById('autoBtn')||pass)})();
+(function(){const a=document.getElementById('autoBtn');if(!a)return;const fix=()=>{a.textContent='🗣️';a.style.opacity=S.auto?1:.45};fix();a.addEventListener('click',()=>setTimeout(fix,0))})();
 
 
 (function(){if(/claude|anthropic/i.test(location.hostname))return;const t=document.querySelector('.top-in');if(t){const a=document.createElement('a');a.href='index.html';a.className='hub-btn';a.setAttribute('aria-label','Rozcestník – všetky úrovne');a.title='Všetky úrovne';a.textContent='⌂';t.prepend(a)}
