@@ -1,7 +1,7 @@
 /* Slovensko – veľká výprava: offline režim
    Pri každej novej verzii aplikácií zvýšte číslo VERZIA, aby si zariadenia stiahli nové súbory. */
-const VERZIA = 'vyprava-v10';
-const SUBORY = ['./','index.html','male-objavitelia.html','cestovatelia.html','badatelia.html','experti.html','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png','og.png'];
+const VERZIA = 'vyprava-v11';
+const SUBORY = ['./','index.html','male-objavitelia.html','cestovatelia.html','badatelia.html','experti.html','manifest.webmanifest','icon-192.png','icon-512.png','apple-touch-icon.png','og.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERZIA).then(c => Promise.all(SUBORY.map(u => c.add(u).catch(() => null)))).then(() => self.skipWaiting()));
 });

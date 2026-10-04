@@ -8,7 +8,7 @@ Interaktívny kurz geografie Slovenska pre všetky vekové kategórie.
 - `cestovatelia.html` – 4. a 5. ročník (16 zastávok)
 - `experti.html` – stredná škola a maturita (3 bloky, 10 tém vrátane maturitného trenažéra)
 - `badatelia.html` – 6. až 9. ročník (3 bloky, 15 tém)
-- `manifest.webmanifest`, `sw.js`, `icons/` – inštalácia na plochu a offline režim
+- `manifest.webmanifest`, `sw.js`, `` – inštalácia na plochu a offline režim
 
 ## Zverejnenie na GitHub Pages
 1. Nahrajte **celý obsah priečinka** do repozitára (napr. `slovensko-vyprava`), aby `index.html` bol v koreni.
